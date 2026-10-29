@@ -2,7 +2,6 @@
 
 <p align="center">
   <a href="https://aiclicks.io/">
-    <img src="REPLACE_WITH_SCREENSHOT_URL" alt="best-claude-seo-agencies" />
   </a>
 </p>
 
