@@ -1,0 +1,57 @@
+name: checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+env:
+  CLIENT_DOMAIN: aiclicks.io
+
+jobs:
+  table:
+    name: Generated table matches its dataset
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pyyaml
+      - run: python render_table.py --check
+
+  tests:
+    name: Offline tests on Python ${{ matrix.python }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ["3.9", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: pip install pyyaml
+      - run: python -m unittest discover tests -v
+      - name: Report runs on the sample log
+        run: |
+          for v in client prompt day; do
+            python tracker/report.py --clients tracker/clients.example.yaml --runs examples/sample-runs.jsonl --by $v
+          done
+          python tracker/report.py --clients tracker/clients.example.yaml --runs examples/sample-runs.jsonl --domains 5
+      - run: python tracker/claude_rank.py --clients tracker/clients.example.yaml --dry-run --runs 2
+
+  links:
+    name: Links resolve
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check client and github.com links
+        run: |
+          fail=0
+          for url in $(grep -oh "https://\($CLIENT_DOMAIN\|github\.com\)[^)\"< ]*" README.md | sed 's/[.,]$//' | sort -u); do
+            code=$(curl -s -o /dev/null -w "%{http_code}" -L --max-time 25 "$url" || echo 000)
+            if [ "$code" != "200" ]; then echo "  $code  $url"; fail=1; fi
+          done
+          exit $fail

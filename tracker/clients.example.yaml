@@ -1,0 +1,26 @@
+# One block per client. Brands, domains and competitors below are fictional.
+# Prompts should be the commercial questions a buyer types, the kind Claude
+# answers with a list of vendors. "What is X" prompts return definitions, not
+# brands, and add cost without adding signal.
+
+clients:
+  - id: northwind-dental
+    brand: Northwind Dental
+    aliases: [Northwind]
+    domains: [northwinddental.example]
+    competitors: [Brightsmile Clinic, Harbor Dental Group, Peak Orthodontics]
+    location: {city: Denver, region: Colorado, country: US}
+    prompts:
+      - best dental clinic in Denver for implants
+      - who offers same day crowns in Denver
+      - affordable invisalign provider near Denver
+
+  - id: ledgerly
+    brand: Ledgerly
+    aliases: []
+    domains: [ledgerly.example, app.ledgerly.example]
+    competitors: [Tallybook, Countwise, Sumora]
+    prompts:
+      - best bookkeeping software for small agencies
+      - which accounting tool handles multi currency invoicing for freelancers
+      - alternatives to spreadsheets for tracking client retainers

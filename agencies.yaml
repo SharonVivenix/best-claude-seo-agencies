@@ -1,0 +1,92 @@
+# Evidence ledger for Claude SEO vendors.
+#
+# Every field is a fact you can check on the vendor's own page, read on
+# 29 October 2026. There are no scores. The "open questions" column in the
+# README is computed by render_table.py from the booleans below, so a vendor
+# that publishes new proof loses its open question the moment you flip a flag.
+#
+# Field reference
+#   delivery              software | agency
+#   price                 what the vendor publishes, verbatim where possible
+#   price_published       true when a number appears on the vendor's own site
+#   claude_isolated       true when results are reported for Claude alone,
+#                         not blended into an "AI" or "LLM" total
+#   named_proof           named client results shown on the Claude page
+#   crawler_agents        user agents the vendor's Claude page names
+#   mcp                   vendor scopes Model Context Protocol work
+#   tracking              how Claude visibility gets measured
+
+- id: aiclicks
+  name: AIclicks
+  url: https://aiclicks.io/
+  claude_page: https://aiclicks.io/trackers/claude-ai-tracker
+  delivery: software
+  founded: null
+  price: "$59/mo Starter, 3 day trial"
+  price_published: true
+  claude_isolated: true
+  named_proof: "Your own data, filtered to Claude per prompt"
+  crawler_agents: []
+  mcp: false
+  tracking: "Daily prompt runs on up to 8 engines incl. Claude, CSV export, private API on Business"
+  best_for: "Agencies that want to run Claude tracking for many clients themselves"
+
+- id: victorious
+  name: Victorious
+  url: https://victorious.com/
+  claude_page: https://victorious.com/services/answer-engine-optimization/claude-seo/
+  delivery: agency
+  founded: 2013
+  price: "Not published, intake form budget brackets start at $5,000/mo"
+  price_published: false
+  claude_isolated: false
+  named_proof: "Delta Electronics, Porte Brown, SimplyFun (organic and AI Overview metrics)"
+  crawler_agents: []
+  mcp: false
+  tracking: "Monitor and iterate step inside a seven step AEO process"
+  best_for: "Enterprise brands that want named, dated case studies before signing"
+
+- id: 1digital
+  name: 1Digital Agency
+  url: https://www.1digitalagency.com/
+  claude_page: https://www.1digitalagency.com/claude-ai-seo-services/
+  delivery: agency
+  founded: 2012
+  price: "Custom quote"
+  price_published: false
+  claude_isolated: false
+  named_proof: null
+  crawler_agents: [ClaudeBot, Claude-Web, Claude-User]
+  mcp: true
+  tracking: "Citation share monitoring over a 3 to 6 month window"
+  best_for: "Ecommerce catalogs that want crawler config and an MCP server scoped"
+
+- id: found
+  name: Found
+  url: https://www.found.co.uk/
+  claude_page: https://www.found.co.uk/services/seo/ai-seo/claude-seo/
+  delivery: agency
+  founded: 2005
+  price: "Not published"
+  price_published: false
+  claude_isolated: false
+  named_proof: "Mahlkönig, +194% YoY blog clicks, 67% of LLM citations from created content"
+  crawler_agents: []
+  mcp: false
+  tracking: "In house Everysearch and Luminr platforms across Claude and other engines"
+  best_for: "UK enterprise teams adding Claude to an existing agency retainer"
+
+- id: the66th
+  name: The 66th
+  url: https://www.the66th.com/
+  claude_page: https://www.the66th.com/services/ai-search-optimization/claude/
+  delivery: agency
+  founded: null
+  price: "Not published, Claude work included in SEO retainers"
+  price_published: false
+  claude_isolated: false
+  named_proof: "Two SEO case studies with Claude citations as a side result"
+  crawler_agents: []
+  mcp: false
+  tracking: "Monthly citation appearance checks with competitor and sentiment notes"
+  best_for: "Brands that refuse to pay a separate line item for Claude"
