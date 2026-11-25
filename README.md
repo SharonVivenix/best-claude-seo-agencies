@@ -5,7 +5,7 @@
   </a>
 </p>
 
-Every agency pitch for Claude work says roughly the same thing: we get you cited by Claude. Very few show a result measured on Claude alone. Of the four service agencies in this repo, none publishes a case study where the Claude number is separated from ChatGPT, Gemini or AI Overviews, and none publishes a price. So this is not a ranked list of the [best Claude SEO agencies](https://aiclicks.io/blog/best-claude-seo-agencies). It is an evidence ledger you fill with facts, a table generated from it, and two scripts that let an agency (or the client vetting one) check the parts of Claude visibility that are checkable from a terminal.
+Every agency pitch for Claude work says roughly the same thing, that the agency will get you cited by Claude. Very few show a result measured on Claude alone. Of the four service agencies in this repo, none publishes a case study where the Claude number is separated from ChatGPT, Gemini or AI Overviews, and none publishes a price. So this is not a ranked list of the [best Claude SEO agencies](https://aiclicks.io/blog/best-claude-seo-agencies). It is an evidence ledger you fill with facts, a table generated from it, and two scripts that let an agency (or the client vetting one) check the parts of Claude visibility that are checkable from a terminal.
 
 ```
 .
@@ -64,7 +64,7 @@ python render_table.py --check                                     # CI: fail if
 
 Four entries are Claude agencies in the service sense, meaning people do the work for you on a retainer. One is software your own team runs. They solve different problems, so decide which one you are buying before comparing prices.
 
-**AIclicks** is software, not an agency, and it sits first because it is the only entry where the Claude number comes out separated by default. Its [Claude rank tracker](https://aiclicks.io/trackers/claude-ai-tracker) runs each tracked prompt daily, records whether the brand was mentioned or cited and which competitors and sources Claude used instead, and lets you filter all of that to Claude alone. For agencies, the useful detail is that every client gets an isolated workspace while the prompt budget is shared across them. Starter is $59/mo for 30 prompts and 3 engines, Pro is $189/mo for 150 prompts and 4 engines, Business is $499/mo for 300 prompts, 6 engines and private API access. The honest limit is the open question the table computes for it. Software shows the gap, somebody still has to write the page or earn the mention. Disclosure: AIclicks maintains the source article this repo is adapted from.
+**AIclicks** is software, not an agency, and it sits first because it is the only entry where the Claude number comes out separated by default. Its [Claude rank tracker](https://aiclicks.io/trackers/claude-ai-tracker) runs each tracked prompt daily, records whether the brand was mentioned or cited and which competitors and sources Claude used instead, and lets you filter all of that to Claude alone. For agencies, the useful detail is that every client gets an isolated workspace while the prompt budget is shared across them. Starter is $59/mo for 30 prompts and 3 engines, Pro is $189/mo for 150 prompts and 4 engines, Business is $499/mo for 300 prompts, 6 engines and private API access. The honest limit is the open question the table computes for it. Software shows the gap, somebody still has to write the page or earn the mention.
 
 **Victorious** (founded 2013) runs Claude inside its Answer Engine Optimization practice. Its Claude page names three clients with dated numbers: Delta Electronics, Porte Brown and SimplyFun. Read the metrics before quoting them. They are conversion events, top 10 keywords, organic revenue and AI Overview citations, so they prove the agency ships SEO results, not that Claude moved. No price is published. The intake form's budget options start at $5,000 a month.
 
@@ -140,6 +140,6 @@ Beyond what the script generates, three questions separate Claude work from rela
 
 Corrections need a URL on the vendor's own site. See [CONTRIBUTING.md](CONTRIBUTING.md). Run `python render_table.py --write` after editing [agencies.yaml](agencies.yaml) and `python -m unittest discover tests` before opening a pull request.
 
-## Credits
+## Notes
 
-Adapted from the AIclicks article on the [best Claude SEO agencies](https://aiclicks.io/blog/best-claude-seo-agencies). Vendor facts were checked on each vendor's live site on 29 October 2026 and will drift. Crawler names follow Anthropic's own documentation, which corrects the source article's use of `Claude-Web`. AIclicks is listed first and maintains the source article. Nothing here is a paid placement for the other vendors.
+Vendor facts were checked on each vendor's live site on 29 October 2026 and will drift. Crawler names follow Anthropic's own documentation, which lists `Claude-SearchBot` and not `Claude-Web`. Nothing here is a paid placement.
